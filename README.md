@@ -32,6 +32,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-u8darts-green.svg)](https://anaconda.org/conda-forge/u8darts) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/u8darts.svg)](https://anaconda.org/conda-forge/u8darts) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/u8darts.svg)](https://anaconda.org/conda-forge/u8darts) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/u8darts.svg)](https://anaconda.org/conda-forge/u8darts) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-u8darts--all-green.svg)](https://anaconda.org/conda-forge/u8darts-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/u8darts-all.svg)](https://anaconda.org/conda-forge/u8darts-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/u8darts-all.svg)](https://anaconda.org/conda-forge/u8darts-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/u8darts-all.svg)](https://anaconda.org/conda-forge/u8darts-all) |
 
 Installing u8darts
 ==================
@@ -43,10 +44,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `u8darts` can be installed with:
+Once the `conda-forge` channel has been enabled, `u8darts, u8darts-all` can be installed with:
 
 ```
-conda install u8darts
+conda install u8darts u8darts-all
 ```
 
 It is possible to list all of the versions of `u8darts` available on your platform with:
