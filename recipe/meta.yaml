@@ -65,6 +65,8 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - python >=3.7
       run:
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pmdarima >=1.8.0
