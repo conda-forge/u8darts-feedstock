@@ -1,4 +1,4 @@
-{% set version = "0.9.1" %}
+{% set version = "0.10.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 344ee13b3d60d7500009c8b1b993f29be5d3cab701c3744521ec7f0c980543c9
+  sha256: 55aa6bef61de378fed3272caaa4c314935723107c24decc42ef8560a0916acdb
 
 build:
   number: 0
@@ -25,7 +25,7 @@ requirements:
     - xarray >=0.18.0
     - scipy >=1.6.0
     - statsmodels >=0.12.0
-    - matplotlib-base >=3.4.0
+    - matplotlib-base ==3.4.2
     - pandas >=1.2.0,<1.3.0
     - ipython >=7.22.0
     - tqdm >=4.60.0
@@ -39,12 +39,14 @@ test:
   imports:
     - darts
     - darts.dataprocessing
+    - darts.dataprocessing.dtw
     - darts.dataprocessing.transformers
     - darts.datasets
     - darts.metrics
     - darts.models
     - darts.tests
     - darts.tests.dataprocessing
+    - darts.tests.dataprocessing.dtw
     - darts.tests.dataprocessing.transformers
     - darts.tests.utils
     - darts.utils
