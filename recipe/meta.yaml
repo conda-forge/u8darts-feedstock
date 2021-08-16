@@ -49,7 +49,6 @@ outputs:
         - darts.models
         - darts.tests
         - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.dtw
         - darts.tests.dataprocessing.transformers
         - darts.tests.utils
         - darts.utils
