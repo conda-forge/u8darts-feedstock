@@ -1,4 +1,4 @@
-{% set version = "0.10.0" %}
+{% set version = "0.10.1" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 55aa6bef61de378fed3272caaa4c314935723107c24decc42ef8560a0916acdb
+  sha256: 6f1cb0feb352ab32a592fe020417e1aba725b696db7a9918f4afdf34c8218182
 
 build:
   number: 0
@@ -66,8 +66,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.7
+        - python >=3.7,<3.9
       run:
+        - python >=3.7,<3.9
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pmdarima >=1.8.0
         - pytorch >=1.8.0,<1.9.0
