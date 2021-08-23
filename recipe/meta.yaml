@@ -66,9 +66,8 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.7,<3.9
+        - python >=3.7
       run:
-        - python >=3.7,<3.9
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pmdarima >=1.8.0
         - pytorch >=1.8.0,<1.9.0
