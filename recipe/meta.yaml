@@ -61,6 +61,41 @@ outputs:
         - pip
         - testfixtures
 
+  - name: u8darts-torch
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=3.7
+      run:
+        - python >=3.7
+        - {{ pin_subpackage("u8darts", exact=True) }}
+        - pytorch >=1.8.0,<1.9.0
+        - tensorboard >=2.4.0
+
+    test:
+      imports:
+        - darts
+        - darts.dataprocessing
+        - darts.dataprocessing.dtw
+        - darts.dataprocessing.transformers
+        - darts.datasets
+        - darts.metrics
+        - darts.models
+        - darts.tests
+        - darts.tests.dataprocessing
+        - darts.tests.dataprocessing.transformers
+        - darts.tests.utils
+        - darts.utils
+        - darts.utils.data
+      source_files:
+        - darts
+      commands:
+        - python -m unittest
+      requires:
+        - pip
+        - testfixtures
+
   - name: u8darts-all
     build:
       noarch: python
