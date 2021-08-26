@@ -17,8 +17,7 @@ outputs:
   - name: u8darts
     build:
       noarch: python
-    # necessary because {{ PYTHON }} does not work with multiple outputs
-    script: build_base.sh
+    script: python -m pip install . --no-deps -vv
     requirements:
       host:
         - python >=3.7
