@@ -33,6 +33,7 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-u8darts-green.svg)](https://anaconda.org/conda-forge/u8darts) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/u8darts.svg)](https://anaconda.org/conda-forge/u8darts) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/u8darts.svg)](https://anaconda.org/conda-forge/u8darts) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/u8darts.svg)](https://anaconda.org/conda-forge/u8darts) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-u8darts--all-green.svg)](https://anaconda.org/conda-forge/u8darts-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/u8darts-all.svg)](https://anaconda.org/conda-forge/u8darts-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/u8darts-all.svg)](https://anaconda.org/conda-forge/u8darts-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/u8darts-all.svg)](https://anaconda.org/conda-forge/u8darts-all) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-u8darts--torch-green.svg)](https://anaconda.org/conda-forge/u8darts-torch) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/u8darts-torch.svg)](https://anaconda.org/conda-forge/u8darts-torch) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/u8darts-torch.svg)](https://anaconda.org/conda-forge/u8darts-torch) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/u8darts-torch.svg)](https://anaconda.org/conda-forge/u8darts-torch) |
 
 Installing u8darts
 ==================
@@ -44,10 +45,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `u8darts, u8darts-all` can be installed with:
+Once the `conda-forge` channel has been enabled, `u8darts, u8darts-all, u8darts-torch` can be installed with:
 
 ```
-conda install u8darts u8darts-all
+conda install u8darts u8darts-all u8darts-torch
 ```
 
 It is possible to list all of the versions of `u8darts` available on your platform with:
