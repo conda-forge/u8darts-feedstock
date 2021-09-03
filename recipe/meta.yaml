@@ -10,7 +10,7 @@ source:
   sha256: 6f1cb0feb352ab32a592fe020417e1aba725b696db7a9918f4afdf34c8218182
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -66,9 +66,8 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.7,<3.9
+        - python >=3.7
       run:
-        - python >=3.7,<3.9
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pmdarima >=1.8.0
         - pytorch >=1.8.0,<1.9.0
