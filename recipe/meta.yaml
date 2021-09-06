@@ -10,15 +10,14 @@ source:
   sha256: 8afeaaff7fdcb09c32d047c371d50a48c070b84890937611bc7a005322022c96
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
   - name: u8darts
     build:
       noarch: python
-    # necessary because {{ PYTHON }} does not work with multiple outputs
-    script: build_base.sh
+      script: python -m pip install . --no-deps -vv
     requirements:
       host:
         - python >=3.7
@@ -39,6 +38,41 @@ outputs:
         - joblib >=1.0.0
         - requests >=2.25.0
         - lightgbm >=3.2.1
+    test:
+      imports:
+        - darts
+        - darts.dataprocessing
+        - darts.dataprocessing.dtw
+        - darts.dataprocessing.transformers
+        - darts.datasets
+        - darts.metrics
+        - darts.models
+        - darts.tests
+        - darts.tests.dataprocessing
+        - darts.tests.dataprocessing.transformers
+        - darts.tests.utils
+        - darts.utils
+        - darts.utils.data
+      source_files:
+        - darts
+      commands:
+        - python -m unittest
+      requires:
+        - pip
+        - testfixtures
+
+  - name: u8darts-torch
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=3.7
+      run:
+        - python >=3.7
+        - {{ pin_subpackage("u8darts", exact=True) }}
+        - pytorch >=1.8.0,<1.9.0
+        - tensorboard >=2.4.0
+
     test:
       imports:
         - darts
