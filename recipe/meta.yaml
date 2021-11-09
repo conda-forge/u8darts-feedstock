@@ -1,4 +1,4 @@
-{% set version = "0.13.0" %}
+{% set version = "0.13.1" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 6f054a61b7a30200f09488b0fe83086e93d7687e56e060cc1de576d193b3b39e
+  sha256: b14685aba752385418f851407840b5e22e7cd4342f174d00a886b2b564aefd8c
 
 build:
   number: 0
@@ -55,8 +55,8 @@ outputs:
         - darts.utils.data
       source_files:
         - darts
-#       commands:
-#         - python -m unittest
+      commands:
+        - python -m unittest
       requires:
         - pip
         - testfixtures
@@ -90,8 +90,8 @@ outputs:
         - darts.utils.data
       source_files:
         - darts
-#       commands:
-#         - python -m unittest
+      commands:
+        - python -m unittest
       requires:
         - pip
         - testfixtures
