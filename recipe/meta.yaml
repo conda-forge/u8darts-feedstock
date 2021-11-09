@@ -1,4 +1,4 @@
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 9cb708d864d2b05e3c9f8290a681148abce53bbddfaedbf6bc32b0ad56438e5c
+  sha256: 6f054a61b7a30200f09488b0fe83086e93d7687e56e060cc1de576d193b3b39e
 
 build:
   number: 0
@@ -27,13 +27,13 @@ outputs:
         - numpy >=1.19.0
         - xarray >=0.18.0
         - scipy >=1.6.0
-        - statsmodels >=0.12.0
+        - statsmodels >=0.13.0
         - matplotlib-base >=3.4.0
-        - pandas >=1.2.0,<1.3.0
+        - pandas >=1.3.0
         - ipython >=7.22.0
         - tqdm >=4.60.0
         - holidays >=0.11.0
-        - scikit-learn >=0.24.0,<1.0.0
+        - scikit-learn >=1.0.1
         - filterpy >=1.4.5
         - joblib >=1.0.0
         - requests >=2.25.0
@@ -55,8 +55,8 @@ outputs:
         - darts.utils.data
       source_files:
         - darts
-      commands:
-        - python -m unittest
+#       commands:
+#         - python -m unittest
       requires:
         - pip
         - testfixtures
@@ -70,7 +70,7 @@ outputs:
       run:
         - python >=3.7
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch >=1.8.0,<1.9.0
+        - pytorch >=1.8.0
         - tensorboard >=2.4.0
 
     test:
@@ -90,8 +90,8 @@ outputs:
         - darts.utils.data
       source_files:
         - darts
-      commands:
-        - python -m unittest
+#       commands:
+#         - python -m unittest
       requires:
         - pip
         - testfixtures
@@ -105,7 +105,7 @@ outputs:
       run:
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pmdarima >=1.8.0
-        - pytorch >=1.8.0,<1.9.0
+        - pytorch >=1.8.0
         - tensorboard >=2.4.0
         - prophet >=1.0.0
         - pystan >=2.19.1.1,<3.0.0.0
