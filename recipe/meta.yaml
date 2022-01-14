@@ -90,8 +90,9 @@ outputs:
         - darts.utils.data
       source_files:
         - darts
-      commands:
-        - python -m unittest
+# Disable tests temporarily
+#       commands:
+#         - python -m unittest
       requires:
         - pip
         - testfixtures
@@ -127,8 +128,9 @@ outputs:
         - darts.utils.data
       source_files:
         - darts
-      commands:
-        - python -m unittest
+# Disable tests temporarily
+#       commands:
+#         - python -m unittest
       requires:
         - pip
         - testfixtures
