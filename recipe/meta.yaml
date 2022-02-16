@@ -1,4 +1,4 @@
-{% set version = "0.16.1" %}
+{% set version = "0.17.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 11377bcc0fca3a148b7ba7e48ad49c0000ef857531a0e141921414229e7962a8
+  sha256: 0071d2d1f7b8291397d861c2b0818d84061f9e84b93c4184b4e1e908ee87cb0c
 
 build:
   number: 0
@@ -24,20 +24,20 @@ outputs:
         - pip
       run:
         - python >=3.7
+        - holidays >=0.11.1
+        - ipython >=7.0.0
+        - joblib >=0.16.0
+        - lightgbm >=2.2.3
+        - matplotlib-base >=3.3.0
+        - nfoursid >=0.1.0
         - numpy >=1.19.0
-        - xarray >=0.17.0
+        - pandas >=1.1.0
+        - requests >=2.22.0
+        - scikit-learn >=1.0.1
         - scipy >=1.3.2
         - statsmodels >=0.13.0
-        - matplotlib-base >=3.3.0
-        - pandas >=1.1.0
-        - ipython >=7.0.0
         - tqdm >=4.60.0
-        - holidays >=0.11.1
-        - scikit-learn >=1.0.1
-        - joblib >=0.16.0
-        - requests >=2.22.0
-        - lightgbm >=2.2.3
-        - nfoursid >=0.1.0
+        - xarray >=0.17.0
     test:
       imports:
         - darts
@@ -70,8 +70,8 @@ outputs:
       run:
         - python >=3.7
         - {{ pin_subpackage("u8darts", exact=True) }}
+        - pytorch-lightning>=1.5.0
         - pytorch >=1.8.0
-        - tensorboard >=2.4.0
 
     test:
       imports:
@@ -90,9 +90,8 @@ outputs:
         - darts.utils.data
       source_files:
         - darts
-# Disable tests temporarily
-#       commands:
-#         - python -m unittest
+      commands:
+        - python -m unittest
       requires:
         - pip
         - testfixtures
@@ -106,10 +105,10 @@ outputs:
       run:
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pmdarima >=1.8.0
-        - pytorch >=1.8.0
-        - tensorboard >=2.4.0
         - prophet >=1.0.0
         - pystan >=2.19.1.1,<3.0.0.0
+        - pytorch-lightning>=1.5.0
+        - pytorch >=1.8.0
 
     test:
       imports:
@@ -128,9 +127,8 @@ outputs:
         - darts.utils.data
       source_files:
         - darts
-# Disable tests temporarily
-#       commands:
-#         - python -m unittest
+      commands:
+        - python -m unittest
       requires:
         - pip
         - testfixtures
