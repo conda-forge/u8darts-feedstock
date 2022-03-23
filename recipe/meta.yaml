@@ -99,12 +99,11 @@ outputs:
   - name: u8darts-all
     build:
       noarch: python
-      script: |
-        python -m pip install . --no-deps -vv
-        python -m pip install "tbats>=1.1.0" -vv
+      script: python -m pip install "tbats>=1.1.0" -vv
     requirements:
       host:
         - python >=3.7
+        - pip
       run:
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pmdarima >=1.8.0
