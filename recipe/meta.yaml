@@ -99,7 +99,7 @@ outputs:
   - name: u8darts-all
     build:
       noarch: python
-      script: python -m pip install "tbats>=1.1.0" -vv
+      script: python -m pip install "tbats>=1.1.0" --no-deps -vv
     requirements:
       host:
         - python >=3.7
