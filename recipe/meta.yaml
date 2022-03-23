@@ -1,4 +1,4 @@
-{% set version = "0.17.1" %}
+{% set version = "0.18.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 614b31f6849ecbc20ebbf907ebed1bad2697ae496a1106d32d1800312b17cd19
+  sha256: 4a0b15b573fb4c44e1bd5354eec6052725d91b3cbbb86cf38f3a4a7e28e7a320
 
 build:
   number: 0
@@ -99,9 +99,11 @@ outputs:
   - name: u8darts-all
     build:
       noarch: python
+      script: python -m pip install "tbats>=1.1.0" --no-deps -vv
     requirements:
       host:
         - python >=3.7
+        - pip
       run:
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pmdarima >=1.8.0
