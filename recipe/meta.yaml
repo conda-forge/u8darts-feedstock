@@ -57,10 +57,11 @@ outputs:
       source_files:
         - darts
       commands:
-        - python -m unittest
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
+        - pytest
 
   - name: u8darts-torch
     build:
@@ -92,10 +93,11 @@ outputs:
       source_files:
         - darts
       commands:
-        - python -m unittest
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
+        - pytest
 
   - name: u8darts-all
     build:
@@ -129,10 +131,11 @@ outputs:
       source_files:
         - darts
       commands:
-        - python -m unittest
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
+        - pytest
 
 about:
   home: https://unit8co.github.io/darts/
