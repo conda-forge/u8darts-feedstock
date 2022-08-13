@@ -1,4 +1,4 @@
-{% set version = "0.20.0" %}
+{% set version = "0.21.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 6df748461b50d762933b2ac583e6910745ca1616faefa2a0f87fdaf4f951a7c5
+  sha256: 9da9045cac29e071c3d80c2b671dc4641a2b09ed5fc7565ac87037e6e9cfea81
 
 build:
   number: 0
@@ -24,19 +24,23 @@ outputs:
         - pip
       run:
         - python >=3.7
+        - catboost >=1.0.6
         - holidays >=0.11.1
-        - ipython >=7.0.0
+        - ipython >=5.0.0
         - joblib >=0.16.0
         - lightgbm >=2.2.3
         - matplotlib-base >=3.3.0
-        - nfoursid >=0.1.0
+        - nfoursid >=1.0.0
         - numpy >=1.19.0
         - pandas >=1.0.5
+        - pmdarima >=1.8.0
+        - prophet >=1.1
         - requests >=2.22.0
         - scikit-learn >=1.0.1
         - scipy >=1.3.2
-        - statsforecast >=0.5.2
+        - statsforecast ==0.6.0
         - statsmodels >=0.13.0
+        - tbats >=1.1.0
         - tqdm >=4.60.0
         - xarray >=0.17.0
     test:
@@ -107,11 +111,8 @@ outputs:
         - python >=3.7
       run:
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pmdarima >=1.8.0
-        - pystan >=2.19.1.1,<3.0.0.0
         - pytorch-lightning >=1.5.0
         - pytorch >=1.8.0
-        - tbats >=1.1.0
 
     test:
       imports:
@@ -150,4 +151,4 @@ extra:
   recipe-maintainers:
     - hrzn
     - tomasvanpottelbergh
-    - gnwhr
+    - dennisbader
