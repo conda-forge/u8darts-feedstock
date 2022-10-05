@@ -1,4 +1,4 @@
-{% set version = "0.21.0" %}
+{% set version = "0.22.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 9da9045cac29e071c3d80c2b671dc4641a2b09ed5fc7565ac87037e6e9cfea81
+  sha256: 77cc4dc96924ad98f6d3e87b17b05eb86f992bb3bc54e7a613f6f0a67d5a66b8
 
 build:
   number: 0
@@ -34,11 +34,12 @@ outputs:
         - numpy >=1.19.0
         - pandas >=1.0.5
         - pmdarima >=1.8.0
-        - prophet >=1.1
+        - prophet >=1.1.1
         - requests >=2.22.0
         - scikit-learn >=1.0.1
         - scipy >=1.3.2
-        - statsforecast ==0.6.0
+        - shap >=0.40.0
+        - statsforecast >=1.0.0
         - statsmodels >=0.13.0
         - tbats >=1.1.0
         - tqdm >=4.60.0
@@ -50,6 +51,7 @@ outputs:
         - darts.dataprocessing.dtw
         - darts.dataprocessing.transformers
         - darts.datasets
+        - darts.explainability
         - darts.metrics
         - darts.models
         - darts.tests
@@ -86,6 +88,7 @@ outputs:
         - darts.dataprocessing.dtw
         - darts.dataprocessing.transformers
         - darts.datasets
+        - darts.explainability
         - darts.metrics
         - darts.models
         - darts.tests
@@ -121,6 +124,7 @@ outputs:
         - darts.dataprocessing.dtw
         - darts.dataprocessing.transformers
         - darts.datasets
+        - darts.explainability
         - darts.metrics
         - darts.models
         - darts.tests
