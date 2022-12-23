@@ -44,7 +44,7 @@ outputs:
         - tbats >=1.1.0
         - tqdm >=4.60.0
         - xarray >=0.17.0
-        - xgboost >= 1.6.0
+        - xgboost >=1.6.0
     test:
       imports:
         - darts
