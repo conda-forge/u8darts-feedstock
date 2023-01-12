@@ -7,7 +7,7 @@ Package license: Apache-2.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/u8darts-feedstock/blob/main/LICENSE.txt)
 
-Summary: A python library for easy manipulation and forecasting of time series.
+Summary: A python library for user-friendly forecasting and anomaly detection on time series.
 
 Development: https://github.com/unit8co/darts
 
