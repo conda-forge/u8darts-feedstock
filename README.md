@@ -1,11 +1,11 @@
-About u8darts
-=============
+About u8darts-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/u8darts-feedstock/blob/main/LICENSE.txt)
 
 Home: https://unit8co.github.io/darts/
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/u8darts-feedstock/blob/main/LICENSE.txt)
 
 Summary: A python library for user-friendly forecasting and anomaly detection on time series.
 
