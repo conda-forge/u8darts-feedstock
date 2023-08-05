@@ -11,12 +11,10 @@ source:
 
 build:
   number: 0
-  noarch: python
 
 outputs:
   - name: u8darts
     build:
-      noarch: python
       script: python -m pip install . --no-deps -vv
     requirements:
       host:
@@ -76,9 +74,7 @@ outputs:
         - testfixtures
         - pytest
 
-    - name: u8darts-notorch
-    build:
-      noarch: python
+  - name: u8darts-notorch
     requirements:
       host:
         - python >=3.8
@@ -122,8 +118,6 @@ outputs:
         - pytest
 
   - name: u8darts-torch
-    build:
-      noarch: python
     requirements:
       host:
         - python >=3.8
@@ -167,8 +161,6 @@ outputs:
         - pytest
 
   - name: u8darts-all
-    build:
-      noarch: python
     requirements:
       host:
         - python >=3.8
