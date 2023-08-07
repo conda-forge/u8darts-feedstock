@@ -10,12 +10,10 @@ source:
   sha256: f96c64739f036f2764c2fad72bb8c401edf486c8e75ed98d55c56ad63b8c720c
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: u8darts
-    build:
-      script: python -m pip install . --no-deps -vv
     requirements:
       host:
         - python >=3.8
