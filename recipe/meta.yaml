@@ -10,25 +10,28 @@ source:
   sha256: f96c64739f036f2764c2fad72bb8c401edf486c8e75ed98d55c56ad63b8c720c
 
 build:
-  number: 0
+  number: 1
+  noarch: python
+  skip: true  # [py<38]
 
 outputs:
   - name: u8darts
     build:
+      noarch: python
+      skip: true  # [py<38]
       script: python -m pip install . --no-deps -vv
     requirements:
       host:
-        - python >=3.8
+        - python
         - pip
       run:
-        - python >=3.8
+        - python
         - holidays >=0.11.1
         - joblib >=0.16.0
         - matplotlib-base >=3.3.0
         - nfoursid >=1.0.0
         - numpy >=1.19.0
-        - pandas>=1.0.5  # [py>=39]
-        - pandas>=1.0.5,<2.0.0  # [not py>=39]
+        - pandas>=1.0.5
         - pmdarima >=1.8.0
         - pyod >=0.9.5
         - requests >=2.22.0
@@ -75,11 +78,14 @@ outputs:
         - pytest
 
   - name: u8darts-notorch
+    build:
+      noarch: python
+      skip: true  # [py<38]
     requirements:
       host:
-        - python >=3.8
+        - python
       run:
-        - python >=3.8
+        - python
         - {{ pin_subpackage("u8darts", exact=True) }}
         - catboost >=1.0.6
         - lightgbm >=3.2.0
@@ -118,11 +124,14 @@ outputs:
         - pytest
 
   - name: u8darts-torch
+    build:
+      noarch: python
+      skip: true  # [py<38]
     requirements:
       host:
-        - python >=3.8
+        - python
       run:
-        - python >=3.8
+        - python
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pytorch-lightning >=1.5.0
         - tensorboardx >=2.1
@@ -161,6 +170,9 @@ outputs:
         - pytest
 
   - name: u8darts-all
+    build:
+      noarch: python
+      skip: true  # [py<38]
     requirements:
       host:
         - python >=3.8
