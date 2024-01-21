@@ -129,7 +129,7 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=1.5.0
+        - pytorch-lightning >=1.5.0, <=2.1.2
         - tensorboardx >=2.1
         - pytorch >=1.8.0
 
