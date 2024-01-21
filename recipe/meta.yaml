@@ -1,4 +1,4 @@
-{% set version = "0.27.1" %}
+{% set version = "0.27.2" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: cefcba3df2ea10a686d4c46baf36b62e45122a892525148377512325397b9b5a
+  sha256: f55c2054889ca130e6402dd1dd5c7b25c9644b633e9b6069da750b80e04023bd
 
 build:
   number: 0
@@ -129,7 +129,7 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=1.5.0
+        - pytorch-lightning >=1.5.0, <=2.1.2
         - tensorboardx >=2.1
         - pytorch >=1.8.0
 
@@ -174,7 +174,7 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=1.5.0
+        - pytorch-lightning >=1.5.0, <=2.1.2
         - tensorboardx >=2.1
         - pytorch >=1.8.0
         - catboost >=1.0.6
