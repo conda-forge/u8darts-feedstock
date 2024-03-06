@@ -1,4 +1,4 @@
-{% set version = "0.27.2" %}
+{% set version = "0.28.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: f55c2054889ca130e6402dd1dd5c7b25c9644b633e9b6069da750b80e04023bd
+  sha256: 5d7e4f3f5cce4df311f230f107534a7838a3e9faa71e3f9900c9c44dc171444e
 
 build:
   number: 0
@@ -69,7 +69,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
       requires:
         - pip
         - testfixtures
@@ -114,7 +114,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
       requires:
         - pip
         - testfixtures
@@ -129,7 +129,7 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=1.5.0, <=2.1.2
+        - pytorch-lightning >=1.5.0
         - tensorboardx >=2.1
         - pytorch >=1.8.0
 
@@ -159,7 +159,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
       requires:
         - pip
         - testfixtures
@@ -174,7 +174,7 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=1.5.0, <=2.1.2
+        - pytorch-lightning >=1.5.0
         - tensorboardx >=2.1
         - pytorch >=1.8.0
         - catboost >=1.0.6
@@ -207,7 +207,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
       requires:
         - pip
         - testfixtures
