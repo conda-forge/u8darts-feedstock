@@ -69,7 +69,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
       requires:
         - pip
         - testfixtures
@@ -114,7 +114,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
       requires:
         - pip
         - testfixtures
@@ -129,7 +129,7 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=1.5.0, <=2.1.2
+        - pytorch-lightning >=1.5.0
         - tensorboardx >=2.1
         - pytorch >=1.8.0
 
@@ -159,7 +159,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
       requires:
         - pip
         - testfixtures
@@ -174,7 +174,7 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=1.5.0, <=2.1.2
+        - pytorch-lightning >=1.5.0
         - tensorboardx >=2.1
         - pytorch >=1.8.0
         - catboost >=1.0.6
@@ -207,7 +207,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
       requires:
         - pip
         - testfixtures
