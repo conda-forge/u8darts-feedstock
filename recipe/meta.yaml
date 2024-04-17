@@ -1,4 +1,4 @@
-{% set version = "0.28.0" %}
+{% set version = "0.29.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 5d7e4f3f5cce4df311f230f107534a7838a3e9faa71e3f9900c9c44dc171444e
+  sha256: b4e2ed16bf4980123b2b753c7be8f08602f71fdeca5ee1d7cd7f7e77de86dd87
 
 build:
   number: 0
@@ -69,7 +69,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
@@ -114,7 +114,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
@@ -159,7 +159,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
@@ -207,7 +207,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
