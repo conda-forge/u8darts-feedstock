@@ -69,7 +69,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
@@ -114,7 +114,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
@@ -159,7 +159,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
@@ -207,7 +207,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_component_specific_lags_forecasts"
+        - pytest darts/tests
       requires:
         - pip
         - testfixtures
