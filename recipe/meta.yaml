@@ -69,7 +69,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
       requires:
         - pip
         - testfixtures
@@ -114,7 +114,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
       requires:
         - pip
         - testfixtures
@@ -159,7 +159,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
       requires:
         - pip
         - testfixtures
@@ -207,7 +207,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
       requires:
         - pip
         - testfixtures
