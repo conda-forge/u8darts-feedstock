@@ -1,4 +1,4 @@
-{% set version = "0.31.0" %}
+{% set version = "0.32.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 7a12005c5ca641b534fc451109f9f320d94e61f30a057991a10901d715a89f47
+  url: https://pypi.org/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
+  sha256: 4dfac666c2db06a5f2264ecfe2fa7f40307c9da0ed812139315ed1d79a7a5bc4
 
 build:
   number: 0
@@ -20,11 +20,11 @@ outputs:
       script: python -m pip install . --no-deps -vv
     requirements:
       host:
-        - python >=3.8
+        - python >=3.9
         - setuptools
         - pip
       run:
-        - python >=3.8
+        - python >=3.9
         - holidays >=0.11.1
         - joblib >=0.16.0
         - matplotlib-base >=3.3.0
@@ -34,7 +34,7 @@ outputs:
         - pmdarima >=1.8.0
         - pyod >=0.9.5
         - requests >=2.22.0
-        - scikit-learn >=1.0.1
+        - scikit-learn >=1.0.1,<1.6.0
         - scipy >=1.3.2
         - shap >=0.40.0
         - statsforecast >=1.4.0
@@ -81,9 +81,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.8
+        - python >=3.9
       run:
-        - python >=3.8
+        - python >=3.9
         - {{ pin_subpackage("u8darts", exact=True) }}
         - catboost >=1.0.6
         - lightgbm >=3.2.0
@@ -126,9 +126,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.8
+        - python >=3.9
       run:
-        - python >=3.8
+        - python >=3.9
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pytorch-lightning >=1.5.0
         - tensorboardx >=2.1
@@ -171,9 +171,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.8
+        - python >=3.9
       run:
-        - python >=3.8
+        - python >=3.9
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pytorch-lightning >=1.5.0
         - tensorboardx >=2.1
