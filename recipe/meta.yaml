@@ -10,7 +10,7 @@ source:
   sha256: 4dfac666c2db06a5f2264ecfe2fa7f40307c9da0ed812139315ed1d79a7a5bc4
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -20,11 +20,11 @@ outputs:
       script: python -m pip install . --no-deps -vv
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - setuptools
         - pip
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - holidays >=0.11.1
         - joblib >=0.16.0
         - matplotlib-base >=3.3.0
@@ -81,9 +81,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
         - catboost >=1.0.6
         - lightgbm >=3.2.0
@@ -126,9 +126,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pytorch-lightning >=1.5.0
         - tensorboardx >=2.1
@@ -171,9 +171,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pytorch-lightning >=1.5.0
         - tensorboardx >=2.1
@@ -213,6 +213,7 @@ outputs:
         - pip
         - testfixtures
         - pytest
+        - python {{ python_min }}
 
 about:
   home: https://unit8co.github.io/darts/
