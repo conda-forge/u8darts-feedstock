@@ -34,7 +34,7 @@ outputs:
         - pmdarima >=1.8.0
         - pyod >=0.9.5
         - requests >=2.22.0
-        - scikit-learn >=1.0.1,<1.6.0
+        - scikit-learn >=1.0.1
         - scipy >=1.3.2
         - shap >=0.40.0
         - statsforecast >=1.4.0
@@ -72,6 +72,7 @@ outputs:
       commands:
         - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
       requires:
+        - python {{ python_min }}
         - pip
         - testfixtures
         - pytest
@@ -117,6 +118,7 @@ outputs:
       commands:
         - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
       requires:
+        - python {{ python_min }}
         - pip
         - testfixtures
         - pytest
@@ -162,6 +164,7 @@ outputs:
       commands:
         - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
       requires:
+        - python {{ python_min }}
         - pip
         - testfixtures
         - pytest
@@ -210,10 +213,10 @@ outputs:
       commands:
         - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
       requires:
+        - python {{ python_min }}
         - pip
         - testfixtures
         - pytest
-        - python {{ python_min }}
 
 about:
   home: https://unit8co.github.io/darts/
@@ -226,5 +229,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - hrzn
     - dennisbader
+    - madtoinou
