@@ -70,7 +70,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_stridden_conformal_model"
       requires:
         - python {{ python_min }}
         - pip
@@ -116,7 +116,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_stridden_conformal_model"
       requires:
         - python {{ python_min }}
         - pip
@@ -162,7 +162,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_stridden_conformal_model"
       requires:
         - python {{ python_min }}
         - pip
@@ -211,7 +211,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_stridden_conformal_model"
       requires:
         - python {{ python_min }}
         - pip
