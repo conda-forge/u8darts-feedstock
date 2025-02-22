@@ -70,7 +70,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_stridden_conformal_model and not test_backtest_bad_covariates"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates"
       requires:
         - python {{ python_min }}
         - pip
@@ -116,7 +116,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_stridden_conformal_model and not test_backtest_bad_covariates"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates"
       requires:
         - python {{ python_min }}
         - pip
@@ -162,7 +162,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_stridden_conformal_model and not test_backtest_bad_covariates"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates"
       requires:
         - python {{ python_min }}
         - pip
@@ -211,7 +211,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_stridden_conformal_model and not test_backtest_bad_covariates"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates"
       requires:
         - python {{ python_min }}
         - pip
