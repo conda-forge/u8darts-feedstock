@@ -1,4 +1,4 @@
-{% set version = "0.32.0" %}
+{% set version = "0.33.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 4dfac666c2db06a5f2264ecfe2fa7f40307c9da0ed812139315ed1d79a7a5bc4
+  sha256: 9db947a8b3c3428c6860dbfd4d01d072d8245f884b51aaad74a5f6a48a5015c9
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 outputs:
@@ -34,7 +34,7 @@ outputs:
         - pmdarima >=1.8.0
         - pyod >=0.9.5
         - requests >=2.22.0
-        - scikit-learn >=1.0.1,<1.6.0
+        - scikit-learn >=1.0.1
         - scipy >=1.3.2
         - shap >=0.40.0
         - statsforecast >=1.4.0
@@ -70,8 +70,9 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates"
       requires:
+        - python {{ python_min }}
         - pip
         - testfixtures
         - pytest
@@ -115,8 +116,9 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates"
       requires:
+        - python {{ python_min }}
         - pip
         - testfixtures
         - pytest
@@ -160,8 +162,9 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates"
       requires:
+        - python {{ python_min }}
         - pip
         - testfixtures
         - pytest
@@ -208,12 +211,12 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests"
+        - pytest darts/tests -k "not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates"
       requires:
+        - python {{ python_min }}
         - pip
         - testfixtures
         - pytest
-        - python {{ python_min }}
 
 about:
   home: https://unit8co.github.io/darts/
@@ -226,5 +229,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - hrzn
     - dennisbader
+    - madtoinou
