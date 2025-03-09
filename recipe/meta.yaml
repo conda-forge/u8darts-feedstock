@@ -1,4 +1,4 @@
-{% set version = "0.33.0" %}
+{% set version = "0.34.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 9db947a8b3c3428c6860dbfd4d01d072d8245f884b51aaad74a5f6a48a5015c9
+  sha256: 51dc6f2ef1fea79da4ad95b46a70d58e4ebb3393ac88b9277719bc7213704c81
 
 build:
   number: 0
