@@ -31,7 +31,7 @@ outputs:
         - narwhals >=1.25.1
         - nfoursid >=1.0.0
         - numpy >=1.19.0,<2.0.0
-        - pandas>=1.0.5
+        - pandas >=1.0.5
         - pmdarima >=1.8.0
         - pyod >=0.9.5
         - requests >=2.22.0
