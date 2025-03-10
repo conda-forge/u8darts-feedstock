@@ -151,5 +151,5 @@ Feedstock Maintainers
 =====================
 
 * [@dennisbader](https://github.com/dennisbader/)
-* [@madtoinou](https://github.com/madtoinou)
+* [@madtoinou](https://github.com/madtoinou/)
 
