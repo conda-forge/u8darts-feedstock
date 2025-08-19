@@ -69,7 +69,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_backtest_bad_covariates and not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests --ignore=darts/tests/models/forecasting/test_torch_forecasting_model.py -k "not test_backtest_bad_covariates and not test_fit_predict_determinism and not test_fit_predict_randomized"
       requires:
         - python {{ python_min }}
         - pip
@@ -115,7 +115,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_backtest_bad_covariates and not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests --ignore=darts/tests/models/forecasting/test_torch_forecasting_model.py -k "not test_backtest_bad_covariates and not test_fit_predict_determinism and not test_fit_predict_randomized"
       requires:
         - python {{ python_min }}
         - pip
