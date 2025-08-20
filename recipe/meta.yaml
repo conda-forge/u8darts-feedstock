@@ -17,7 +17,6 @@ outputs:
   - name: u8darts
     build:
       noarch: python
-      script: python -m pip install . --no-deps -vv
     requirements:
       host:
         - python {{ python_min }}
