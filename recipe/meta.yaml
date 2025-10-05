@@ -37,12 +37,10 @@ outputs:
         - scikit-learn >=1.6.0
         - scipy >=1.3.2
         - shap >=0.40.0
-        - statsforecast >=1.4.0
         - statsmodels >=0.14.0
         - tqdm >=4.60.0
         - typing-extensions
         - xarray >=0.17.0
-        - xgboost >=2.1.4
     test:
       imports:
         - darts
@@ -69,7 +67,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests --ignore=darts/tests/models/forecasting/test_torch_forecasting_model.py -k "not test_backtest_bad_covariates and not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests
       requires:
         - python {{ python_min }}
         - pip
@@ -88,6 +86,8 @@ outputs:
         - catboost >=1.0.6
         - lightgbm >=3.2.0
         - prophet >=1.1.1
+        - statsforecast >=1.4.0
+        - xgboost >=2.1.4
 
     test:
       imports:
@@ -115,7 +115,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests --ignore=darts/tests/models/forecasting/test_torch_forecasting_model.py -k "not test_backtest_bad_covariates and not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests
       requires:
         - python {{ python_min }}
         - pip
@@ -161,7 +161,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_backtest_bad_covariates and not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests
       requires:
         - python {{ python_min }}
         - pip
@@ -177,12 +177,14 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=1.5.0,<2.5.3
+        - pytorch-lightning >=2.0.0,<2.5.3
         - tensorboardx >=2.1
         - pytorch >=1.8.0
         - catboost >=1.0.6
         - lightgbm >=3.2.0
         - prophet >=1.1.1
+        - statsforecast >=1.4.0
+        - xgboost >=2.1.4
 
     test:
       imports:
@@ -210,7 +212,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_backtest_bad_covariates and not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests
       requires:
         - python {{ python_min }}
         - pip
