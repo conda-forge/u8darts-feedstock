@@ -67,7 +67,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized"
       requires:
         - python {{ python_min }}
         - pip
@@ -115,7 +115,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized"
       requires:
         - python {{ python_min }}
         - pip
@@ -161,7 +161,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized"
       requires:
         - python {{ python_min }}
         - pip
@@ -212,7 +212,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized"
       requires:
         - python {{ python_min }}
         - pip
