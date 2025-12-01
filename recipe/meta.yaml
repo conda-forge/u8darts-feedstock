@@ -60,6 +60,7 @@ outputs:
         - darts.tests
         - darts.tests.dataprocessing
         - darts.tests.dataprocessing.transformers
+        - darts.tests.models.forecasting.artefacts
         - darts.tests.utils
         - darts.utils
         - darts.utils.data
@@ -111,6 +112,7 @@ outputs:
         - darts.tests
         - darts.tests.dataprocessing
         - darts.tests.dataprocessing.transformers
+        - darts.tests.models.forecasting.artefacts
         - darts.tests.utils
         - darts.utils
         - darts.utils.data
@@ -162,6 +164,7 @@ outputs:
         - darts.tests
         - darts.tests.dataprocessing
         - darts.tests.dataprocessing.transformers
+        - darts.tests.models.forecasting.artefacts
         - darts.tests.utils
         - darts.utils
         - darts.utils.data
@@ -218,6 +221,7 @@ outputs:
         - darts.tests
         - darts.tests.dataprocessing
         - darts.tests.dataprocessing.transformers
+        - darts.tests.models.forecasting.artefacts
         - darts.tests.utils
         - darts.utils
         - darts.utils.data
