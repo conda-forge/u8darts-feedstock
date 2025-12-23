@@ -8,7 +8,6 @@ package:
 source:
   git_url: https://github.com/unit8co/darts.git
   git_rev: {{ version }}
-  git_depth: 1
 
 build:
   number: 1
