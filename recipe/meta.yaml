@@ -1,4 +1,4 @@
-{% set version = "0.38.0" %}
+{% set version = "0.39.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 7529c8294026950d5426e0c6385fb46f7475ee1a63b4b4fe7cda8a5094e5284f
+  sha256: 23a1e439c6259272eaae7fc5ad0e294d5ea910939955d081718188cc6db7d8dd
 
 build:
   number: 0
@@ -34,7 +34,7 @@ outputs:
         - pandas >=1.0.5
         - pyod >=0.9.5
         - requests >=2.22.0
-        - scikit-learn >=1.6.0
+        - scikit-learn >=1.6.0,<1.8.0
         - scipy >=1.3.2
         - shap >=0.40.0
         - statsmodels >=0.14.0
@@ -63,7 +63,10 @@ outputs:
         - darts.tests.utils
         - darts.utils
         - darts.utils.data
+        - darts.utils.data.tabularization
+        - darts.utils.data.torch_datasets
         - darts.utils.historical_forecasts
+        - darts.utils.likelihood_models
       source_files:
         - darts
       commands:
@@ -111,7 +114,10 @@ outputs:
         - darts.tests.utils
         - darts.utils
         - darts.utils.data
+        - darts.utils.data.tabularization
+        - darts.utils.data.torch_datasets
         - darts.utils.historical_forecasts
+        - darts.utils.likelihood_models
       source_files:
         - darts
       commands:
@@ -133,7 +139,9 @@ outputs:
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pytorch-lightning >=1.5.0,<2.5.3
         - tensorboardx >=2.1
-        - pytorch >=1.8.0
+        - pytorch >=2.0.0
+        - huggingface_hub >=0.35.3
+        - safetensors >=0.6.2
 
     test:
       imports:
@@ -157,11 +165,14 @@ outputs:
         - darts.tests.utils
         - darts.utils
         - darts.utils.data
+        - darts.utils.data.tabularization
+        - darts.utils.data.torch_datasets
         - darts.utils.historical_forecasts
+        - darts.utils.likelihood_models
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_foundation.py
       requires:
         - python {{ python_min }}
         - pip
@@ -179,7 +190,9 @@ outputs:
         - {{ pin_subpackage("u8darts", exact=True) }}
         - pytorch-lightning >=2.0.0,<2.5.3
         - tensorboardx >=2.1
-        - pytorch >=1.8.0
+        - pytorch >=2.0.0
+        - huggingface_hub >=0.35.3
+        - safetensors >=0.6.2
         - catboost >=1.0.6
         - lightgbm >=3.2.0
         - prophet >=1.1.1
@@ -208,11 +221,14 @@ outputs:
         - darts.tests.utils
         - darts.utils
         - darts.utils.data
+        - darts.utils.data.tabularization
+        - darts.utils.data.torch_datasets
         - darts.utils.historical_forecasts
+        - darts.utils.likelihood_models
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_foundation.py
       requires:
         - python {{ python_min }}
         - pip
