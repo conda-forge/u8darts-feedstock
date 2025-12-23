@@ -1,4 +1,4 @@
-{% set version = "0.39.0" %}
+{% set version = "0.40.0" %}
 {% set pypi_package_name = "u8darts" %}
 
 package:
@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/unit8co/darts.git
+  git_url: https://github.com/daidahao/darts # use zhihao's fork until PR #2979 is merged
   git_rev: {{ version }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 outputs:
@@ -57,10 +57,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
@@ -108,10 +104,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
@@ -159,10 +151,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
@@ -215,10 +203,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
