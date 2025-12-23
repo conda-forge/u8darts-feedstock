@@ -6,11 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: 23a1e439c6259272eaae7fc5ad0e294d5ea910939955d081718188cc6db7d8dd
+  git_url: https://github.com/unit8co/darts.git
+  git_rev: {{ version }}
+  git_depth: 1
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
