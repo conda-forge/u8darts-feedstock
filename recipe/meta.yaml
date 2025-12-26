@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: a907227f00ecb33702f7694ec85975e7c7a9bae9ee6ad6105b79c921f5ef6342
+  git_url: https://github.com/daidahao/darts # use zhihao's fork until PR #2979 is merged
+  git_rev: {{ version }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -57,10 +57,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
@@ -108,10 +104,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
@@ -159,10 +151,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
@@ -215,10 +203,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
