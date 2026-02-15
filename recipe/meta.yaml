@@ -1,13 +1,12 @@
-{% set version = "0.40.0" %}
-{% set pypi_package_name = "u8darts" %}
+{% set version = "0.41.0" %}
 
 package:
   name: u8darts
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz
-  sha256: a907227f00ecb33702f7694ec85975e7c7a9bae9ee6ad6105b79c921f5ef6342
+  git_url: https://github.com/unit8co/darts
+  git_rev: {{ version }}
 
 build:
   number: 0
@@ -30,8 +29,8 @@ outputs:
         - matplotlib-base >=3.3.0
         - narwhals >=1.25.1
         - nfoursid >=1.0.0
-        - numpy >=1.19.0
-        - pandas >=1.0.5
+        - numpy >=2.2.0
+        - pandas >=2.2.0
         - pyod >=0.9.5
         - requests >=2.22.0
         - scikit-learn >=1.6.0,<1.8.0
@@ -39,7 +38,7 @@ outputs:
         - shap >=0.40.0
         - statsmodels >=0.14.0
         - tqdm >=4.60.0
-        - typing-extensions
+        - typing-extensions >=4.0.0
         - xarray >=0.17.0
     test:
       imports:
@@ -57,10 +56,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
@@ -108,10 +103,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
@@ -159,10 +150,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
@@ -172,7 +159,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_foundation.py
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_foundation.py
       requires:
         - python {{ python_min }}
         - pip
@@ -215,10 +202,6 @@ outputs:
         - darts.explainability
         - darts.metrics
         - darts.models
-        - darts.tests
-        - darts.tests.dataprocessing
-        - darts.tests.dataprocessing.transformers
-        - darts.tests.utils
         - darts.utils
         - darts.utils.data
         - darts.utils.data.tabularization
@@ -228,7 +211,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_foundation.py
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_foundation.py
       requires:
         - python {{ python_min }}
         - pip
