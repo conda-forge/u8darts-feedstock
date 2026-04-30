@@ -1,4 +1,4 @@
-{% set version = "0.43.0" %}
+{% set version = "0.44.0" %}
 
 package:
   name: u8darts
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/unit8co/darts/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 6111c316f00f8b8a1c17db9db3d443f00818f3c5dd90166225987c4072f7e368
+  sha256: c0a5cd14eb5fcb88f12b1e5351f9a6021bb1074cedbce656394e8446fd3d24f6
 
 build:
   number: 0
