@@ -29,7 +29,7 @@ outputs:
         - matplotlib-base >=3.3.0
         - narwhals >=1.25.1
         - nfoursid >=1.0.0
-        - numpy >=2.2.0
+        - numpy >=1.26.0
         - pandas >=2.2.0
         - pyod >=0.9.5
         - requests >=2.22.0
@@ -127,7 +127,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=1.5.0,<2.5.3
+        - pytorch-lightning >=2.0.0,<2.5.3
         - tensorboardx >=2.1
         - pytorch >=2.0.0
         - huggingface_hub >=0.35.3
