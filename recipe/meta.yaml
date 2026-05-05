@@ -1,4 +1,4 @@
-{% set version = "0.44.0" %}
+{% set version = "0.44.1" %}
 
 package:
   name: u8darts
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/unit8co/darts/archive/refs/tags/{{ version }}.tar.gz
-  sha256: c0a5cd14eb5fcb88f12b1e5351f9a6021bb1074cedbce656394e8446fd3d24f6
+  sha256: 7874f33f15082fc5d1bd86d8d710f06ad17d3bafad16573c7f525f09606c8643
 
 build:
   number: 0
@@ -29,7 +29,7 @@ outputs:
         - matplotlib-base >=3.3.0
         - narwhals >=1.25.1
         - nfoursid >=1.0.0
-        - numpy >=2.2.0
+        - numpy >=1.26.0
         - pandas >=2.2.0
         - pyod >=0.9.5
         - requests >=2.22.0
@@ -127,7 +127,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=1.5.0,<2.5.3
+        - pytorch-lightning >=2.0.0,<2.5.3
         - tensorboardx >=2.1
         - pytorch >=2.0.0
         - huggingface_hub >=0.35.3
