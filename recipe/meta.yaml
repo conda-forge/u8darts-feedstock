@@ -84,7 +84,7 @@ outputs:
         - {{ pin_subpackage("u8darts", exact=True) }}
         - catboost >=1.0.6
         - lightgbm >=3.2.0
-        - statsforecast >=1.4.0
+        - statsforecast >=1.6.0
         - xgboost >=2.1.4
 
     test:
@@ -184,7 +184,7 @@ outputs:
         - safetensors >=0.6.2
         - catboost >=1.0.6
         - lightgbm >=3.2.0
-        - statsforecast >=1.4.0
+        - statsforecast >=1.6.0
         - xgboost >=2.1.4
 
     test:
