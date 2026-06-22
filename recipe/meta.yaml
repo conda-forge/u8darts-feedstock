@@ -54,6 +54,7 @@ outputs:
         - darts.dataprocessing.transformers
         - darts.datasets
         - darts.explainability
+        - darts.explainability.shap_adapters
         - darts.metrics
         - darts.models
         - darts.utils
@@ -100,6 +101,7 @@ outputs:
         - darts.dataprocessing.transformers
         - darts.datasets
         - darts.explainability
+        - darts.explainability.shap_adapters
         - darts.metrics
         - darts.models
         - darts.utils
@@ -147,6 +149,7 @@ outputs:
         - darts.dataprocessing.transformers
         - darts.datasets
         - darts.explainability
+        - darts.explainability.shap_adapters
         - darts.metrics
         - darts.models
         - darts.utils
@@ -158,7 +161,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_foundation.py
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_patchtst_fm.py --ignore=darts/tests/models/forecasting/test_foundation.py
       requires:
         - python {{ python_min }}
         - pip
@@ -198,6 +201,7 @@ outputs:
         - darts.dataprocessing.transformers
         - darts.datasets
         - darts.explainability
+        - darts.explainability.shap_adapters
         - darts.metrics
         - darts.models
         - darts.utils
@@ -209,7 +213,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_foundation.py
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_patchtst_fm.py --ignore=darts/tests/models/forecasting/test_foundation.py
       requires:
         - python {{ python_min }}
         - pip
