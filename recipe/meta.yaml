@@ -129,7 +129,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=2.0.0,<2.5.3
+        - pytorch-lightning >=2.0.0
         - tensorboardx >=2.1
         - pytorch >=2.0.0
         - huggingface_hub >=0.35.3
@@ -178,7 +178,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=2.0.0,<2.5.3
+        - pytorch-lightning >=2.0.0
         - tensorboardx >=2.1
         - pytorch >=2.0.0
         - huggingface_hub >=0.35.3
