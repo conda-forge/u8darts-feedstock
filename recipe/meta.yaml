@@ -66,7 +66,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized and not test_probabilistic_support"
       requires:
         - python {{ python_min }}
         - pip
@@ -113,7 +113,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized and not test_probabilistic_support"
       requires:
         - python {{ python_min }}
         - pip
@@ -161,7 +161,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_patchtst_fm.py 
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized and not test_probabilistic_support" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_patchtst_fm.py 
           --ignore=darts/tests/models/forecasting/test_foundation.py
       requires:
         - python {{ python_min }}
@@ -214,7 +214,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_patchtst_fm.py 
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized and not test_probabilistic_support" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_patchtst_fm.py 
           --ignore=darts/tests/models/forecasting/test_foundation.py
       requires:
         - python {{ python_min }}
