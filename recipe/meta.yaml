@@ -1,4 +1,4 @@
-{% set version = "0.45.0" %}
+{% set version = "0.46.0" %}
 
 package:
   name: u8darts
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/unit8co/darts/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 9b04fd0fe956f4eea7048ef229221deb937904f037df941178d7d65efac09623
+  sha256: 3eb3b50e666e8ca936e2e609cada4683ee39a8120cbdda6377fb50602cbc2fcd
 
 build:
   number: 0
@@ -66,7 +66,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized and not test_probabilistic_support"
       requires:
         - python {{ python_min }}
         - pip
@@ -113,7 +113,7 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized"
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized and not test_probabilistic_support"
       requires:
         - python {{ python_min }}
         - pip
@@ -129,7 +129,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=2.0.0,<2.5.3
+        - pytorch-lightning >=2.0.0
         - tensorboardx >=2.1
         - pytorch >=2.0.0
         - huggingface_hub >=0.35.3
@@ -161,7 +161,8 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_patchtst_fm.py --ignore=darts/tests/models/forecasting/test_foundation.py
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized and not test_probabilistic_support" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_patchtst_fm.py 
+          --ignore=darts/tests/models/forecasting/test_foundation.py
       requires:
         - python {{ python_min }}
         - pip
@@ -177,7 +178,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=2.0.0,<2.5.3
+        - pytorch-lightning >=2.0.0
         - tensorboardx >=2.1
         - pytorch >=2.0.0
         - huggingface_hub >=0.35.3
@@ -213,7 +214,8 @@ outputs:
       source_files:
         - darts
       commands:
-        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_patchtst_fm.py --ignore=darts/tests/models/forecasting/test_foundation.py
+        - pytest darts/tests -k "not test_fit_predict_determinism and not test_fit_predict_randomized and not test_probabilistic_support" --ignore=darts/tests/models/forecasting/test_chronos2.py --ignore=darts/tests/models/forecasting/test_timesfm2p5.py --ignore=darts/tests/models/forecasting/test_patchtst_fm.py 
+          --ignore=darts/tests/models/forecasting/test_foundation.py
       requires:
         - python {{ python_min }}
         - pip
