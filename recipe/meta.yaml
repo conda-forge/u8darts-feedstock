@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/unit8co/darts/archive/refs/tags/{{ version }}.tar.gz
-  sha256: bce10eb1283e0478f21d627f1e46ef81047e7beecb1c90019f9d3521fe98deb4
+  sha256: c8cfde4558af0321c2cb0849a05053e75b361fd5140c2107938696ca09e59add
 
 build:
   number: 0
