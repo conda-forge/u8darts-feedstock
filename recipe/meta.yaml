@@ -1,4 +1,4 @@
-{% set version = "0.49.0" %}
+{% set version = "0.48.1" %}
 
 package:
   name: u8darts
@@ -63,6 +63,8 @@ outputs:
         - darts.utils.data.torch_datasets
         - darts.utils.historical_forecasts
         - darts.utils.likelihood_models
+        - darts.utils.onnx
+        - darts.utils.serialization
       source_files:
         - darts
       commands:
@@ -110,6 +112,8 @@ outputs:
         - darts.utils.data.torch_datasets
         - darts.utils.historical_forecasts
         - darts.utils.likelihood_models
+        - darts.utils.onnx
+        - darts.utils.serialization
       source_files:
         - darts
       commands:
@@ -129,9 +133,9 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=2.0.0
+        - pytorch-lightning >=2.6.6
         - tensorboardx >=2.1
-        - pytorch >=2.0.0
+        - pytorch >=2.6.0
         - huggingface_hub >=0.35.3
         - safetensors >=0.6.2
 
@@ -158,6 +162,8 @@ outputs:
         - darts.utils.data.torch_datasets
         - darts.utils.historical_forecasts
         - darts.utils.likelihood_models
+        - darts.utils.onnx
+        - darts.utils.serialization
       source_files:
         - darts
       commands:
@@ -178,9 +184,9 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("u8darts", exact=True) }}
-        - pytorch-lightning >=2.0.0
+        - pytorch-lightning >=2.6.6
         - tensorboardx >=2.1
-        - pytorch >=2.0.0
+        - pytorch >=2.6.0
         - huggingface_hub >=0.35.3
         - safetensors >=0.6.2
         - catboost >=1.0.6
@@ -211,6 +217,8 @@ outputs:
         - darts.utils.data.torch_datasets
         - darts.utils.historical_forecasts
         - darts.utils.likelihood_models
+        - darts.utils.onnx
+        - darts.utils.serialization
       source_files:
         - darts
       commands:
